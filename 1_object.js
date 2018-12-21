@@ -8,15 +8,29 @@ If your program is stuck in an infinite loop, you can break out of the program b
 */
 
 // 1. Create an object named book using object literal syntax
+
+var book = [];
+
 // 2. Add a title property to the book object and assign it a string value
+
+book.title = "The hero of ages";
+
 // 3. Add an author property to the book object and assign it a string value
+
+book.author = "Brandon, Sanderson";
+
 // 4. Add a publish_year to the book object and assign it a number to represent the year the book was published
 
+book.year = 2015;
 
 /* 5. Use a for-in loop to print the book object to the console so the final output looks something like this:
 title: Harry Potter and the Sorcerer's Stone
 author: J.K. Rowling
 publish_year: 1997
 */
+
+for (var prop in book) {
+  console.log( prop + ": " + book[prop]);
+}
 
 // 6. Run your code by typing node 1_object.js in the console below
