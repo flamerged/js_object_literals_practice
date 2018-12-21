@@ -14,6 +14,12 @@ If your program is stuck in an infinite loop, you can break out of the program b
 // -- unit_price
 // before moving to the next step, make sure you've created the object correctly by logging it to the console like this: console.log(product)
 
+var product = {
+      name: "apple",
+      inventory: 20,
+      price: 0.2
+    };
+
 // 2. Create a function named addInventory(). The function should accept 2 parameters -- the product object, and the number to add to the inventory. The function adjusts the product object's inventory property by adding the number passed into the function. 
 // For example, if the inventory of the product is currently 2, calling addInventory(product, 3) will set the value of inventory to 5
 /* Add a console.log() message to the function that includes a message that looks something like this:
@@ -21,8 +27,14 @@ If your program is stuck in an infinite loop, you can break out of the program b
 In this example, "chair" is the name of the product.
 */
 
+function addInventory(product, value) {
+  product.inventory += value;
+  console.log(value + " " + product.name + "s added to the inventory.");
+}
+
 // 3. Call the addInventory() function
 
+addInventory(product, 5);
 
 // 4. Create a function named processSale(). The function should accept 2 parameters -- the product object, and the number to of products that were sold. The function adjusts the product object's inventory property by subtracting the number passed into the function. The function also returns the total sale which is the unit_price multiplied by the number passed into the function
 // For example, if the inventory of the product is currently 5 and the unit_price is 10, calling processSale(product, 2) will set the value of inventory to 3 and return the value of 20. 
@@ -31,10 +43,18 @@ In this example, "chair" is the name of the product.
 In this example, "chair" is the name of the product.
 */
 
+function processSale(product, sold) {
+  var revenue;
+  product.inventory -= sold;
+  revenue = sold * product.price;
+  console.log(sold + " " + product.name + "s sold.");
+  console.log("Total sale: $" + revenue);
+};
 
 /* 5. Call the processSale() function. When you call the processSale() function log the return value to the console so the message looks something like this:
 "Total sale: $20"
 */
 
+processSale(product, 8);
 
 // 6. Run your code by typing node 2_product.js in the console below

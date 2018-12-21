@@ -9,7 +9,7 @@ If your program is stuck in an infinite loop, you can break out of the program b
 
 // 1. Create an object named book using object literal syntax
 
-var book = [];
+var book = {};
 
 // 2. Add a title property to the book object and assign it a string value
 
